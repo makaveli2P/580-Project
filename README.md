@@ -27,7 +27,7 @@
 
 1. Clone the repository into your local environment.
 ```
-https://github.com/makaveli2P/580-Project.git
+git clone https://github.com/makaveli2P/580-Project.git
 ```
 
 2. Open the folder in PyCharm or navigate to the folder using the command line.
@@ -36,7 +36,7 @@ https://github.com/makaveli2P/580-Project.git
 
 - **Problem1.py**: Contains the solution for problem 1. This file contains implementation of two algorithms.Run the file in PyCharm or use the command:
 ```
-python problem1.py
+python Q1.py
 ```
 
 
@@ -79,7 +79,3 @@ JOIN R3 ON R2.i = R3.x;
 ```
 python compare_results.py
 ```
-
-
-
-
