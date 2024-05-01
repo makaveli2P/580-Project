@@ -3,7 +3,8 @@ from p2.P2 import line_query_join_p2
 from p3.P3_2 import line_join_query_p3_2
 import time
 import matplotlib.pyplot as plt
-
+import csv
+import pandas as pd
 epochs = 10  # You can adjust this value based on how many epochs you want to run
 
 for _ in range(epochs):
@@ -82,3 +83,26 @@ plt.xlabel('Functions')
 plt.ylabel('Average Time (microseconds) over 10 epochs')
 plt.title('Comparison of Average Execution Times')
 plt.savefig("Runtime_comparison_p5.png")
+# Write results of p2 to CSV
+
+with open('p2_result_q5.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(p2_result)
+
+# Write results of p3_2 to CSV
+with open('p3_2_result_q5.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(p3_result)
+
+def compare_results(file1, file2):
+    df1 = pd.read_csv(file1)
+    df2 = pd.read_csv(file2)
+    return df1.equals(df2)
+
+result_comparison = compare_results('p2_result_q5.csv', 'p3_2_result_q5.csv')
+
+print("\n")
+if result_comparison:
+    print("Results from p2 and p3_2 are the same.")
+else:
+    print("Results from p2 and p3_2 are different.")
