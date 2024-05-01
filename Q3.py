@@ -16,5 +16,5 @@ for tuple in result:
 
 # result = line_join_query_p3_brute_force(relations)
 # print("Joined_query from Implementation 3 (Brute Force):")
-# for tuple in resultn :
+# for tuple in result:
 #     print(tuple)
