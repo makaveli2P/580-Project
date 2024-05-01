@@ -128,32 +128,16 @@ p3_2_times.append(end_time - start_time)
 print(len(p3_2_result))
 print(len(p2_result))
 
-query = """
-    SELECT R1.i,  R2.i,  R3.x, R3.y
-    FROM R1
-    JOIN R2 ON R1.value = R2.value
-    JOIN R3 ON R2.i = R3.x;
-"""
-
-start_time = time.time()
-mycursor.execute(query)
-result = mycursor.fetchall()
-# print(result)
-end_time = time.time()
-
-my_sql_execution_time = end_time - start_time
 
 avg_p2_time_micro = runtime_p2
 avg_p3_2_time_micro = runtime_p3
 
 print("Runtime time for Implementation 2: {:.11f} seconds".format(avg_p2_time_micro))
 print("Runtime time for Implementation 3: {:.11f} seconds".format(avg_p3_2_time_micro))
-print("Runtime time for MySql Query: {:.11f} seconds".format(my_sql_execution_time))
 
 mydb.commit()
 
 mydb.close()
-
 
 # Write results of p2 to CSV
 with open('p2_result.csv', 'w', newline='') as csvfile:
